@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+tkinter = "*"
+numpy = "*"
+matplotlib = "*"
+pandas = "*"
+requests = "*"
+confluent-kafka = "*"
+loguru = "*"
+pygame = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"

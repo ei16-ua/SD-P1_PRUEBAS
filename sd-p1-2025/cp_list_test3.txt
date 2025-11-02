@@ -1,0 +1,5 @@
+# Lista de prueba con 3 CPs
+# Para testing rápido
+ALC1
+MAD2
+SEV3

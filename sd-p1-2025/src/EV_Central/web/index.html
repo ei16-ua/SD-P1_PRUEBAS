@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>*** SD EV CHARGING SOLUTION. MONITORIZATION PANEL ***</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">*** SD EV CHARGING SOLUTION. MONITORIZATION PANEL ***</h1>
+        
+        <!-- CP Grid -->
+        <div class="cp-grid" id="cpGrid">
+            <!-- Los paneles de CPs se generarán dinámicamente -->
+        </div>
+
+        <!-- Ongoing Drivers Requests -->
+        <div class="section">
+            <h2 class="section-title">*** ON_GOING DRIVERS REQUESTS ***</h2>
+            <table class="requests-table">
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>START TIME</th>
+                        <th>User ID</th>
+                        <th>CP</th>
+                    </tr>
+                </thead>
+                <tbody id="requestsTable">
+                    <!-- Las solicitudes se llenarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Application Messages -->
+        <div class="section">
+            <h2 class="section-title">*** APLICATION MESSAGES ***</h2>
+            <div class="messages-container" id="messagesContainer">
+                <!-- Los mensajes se añadirán dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

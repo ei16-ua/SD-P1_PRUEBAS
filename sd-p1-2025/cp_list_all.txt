@@ -1,0 +1,11 @@
+# Lista completa de todos los CPs disponibles
+ALC1
+ALC3
+MAD2
+MAD3
+MAD1
+SEV3
+SEV2
+VAL3
+VAL1
+COR1

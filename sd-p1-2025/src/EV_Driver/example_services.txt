@@ -1,0 +1,8 @@
+# Archivo de ejemplo con IDs de puntos de recarga
+# Cada línea representa un CP donde el conductor solicitará un suministro
+# El sistema esperará 4 segundos entre cada solicitud
+
+CP01
+CP02
+CP01
+CP03

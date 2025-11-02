@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Driver - Panel de Conductor</title>
+    <link rel="stylesheet" href="driver_style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🚗 EV DRIVER - PANEL DEL CONDUCTOR</h1>
+        
+        <!-- Driver Info -->
+        <div class="driver-info">
+            <span class="label">Driver ID:</span>
+            <span class="value" id="driverId">-</span>
+        </div>
+
+        <!-- Estado Actual -->
+        <div class="status-panel" id="statusPanel">
+            <h2>📊 ESTADO ACTUAL</h2>
+            <div class="status-grid">
+                <div class="status-item">
+                    <span class="status-label">Estado:</span>
+                    <span class="status-value" id="statusValue">⏸️ EN ESPERA</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">CP Actual:</span>
+                    <span class="status-value" id="currentCP">-</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Potencia Actual:</span>
+                    <span class="status-value kw-value" id="powerValue">0.00 kW</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Consumo Total:</span>
+                    <span class="status-value kwh-value" id="consumptionValue">0.000 kWh</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Importe Total:</span>
+                    <span class="status-value eur-value" id="costValue">0.0000 €</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel de Carga (solo visible cuando está cargando) -->
+        <div class="charging-panel hidden" id="chargingPanel">
+            <h2>🔌 CARGANDO EN <span id="chargingCP">-</span></h2>
+            
+            <!-- Barra de progreso si hay objetivo -->
+            <div class="progress-section hidden" id="progressSection">
+                <div class="progress-info">
+                    <span id="progressText">0.0 / 0.0 kWh</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-estimate" id="timeEstimate">Tiempo restante: calculando...</div>
+            </div>
+            
+            <div class="charging-metrics">
+                <div class="metric-box kw-box">
+                    <div class="metric-label">POTENCIA ACTUAL</div>
+                    <div class="metric-value" id="chargingKW">0.00</div>
+                    <div class="metric-unit">kW</div>
+                </div>
+                <div class="metric-box kwh-box">
+                    <div class="metric-label">CONSUMO TOTAL</div>
+                    <div class="metric-value" id="chargingKWH">0.000</div>
+                    <div class="metric-unit">kWh</div>
+                </div>
+                <div class="metric-box eur-box">
+                    <div class="metric-label">IMPORTE TOTAL</div>
+                    <div class="metric-value" id="chargingEUR">0.0000</div>
+                    <div class="metric-unit">€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selector de CP -->
+        <div class="cp-selector">
+            <h2>📍 SOLICITAR SERVICIO</h2>
+            <div class="input-group">
+                <label for="cpSelect">Selecciona un Charging Point o escribe el ID:</label>
+                <select id="cpSelect">
+                    <option value="">-- Selecciona un CP --</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="cpInput">O escribe el CP_ID manualmente:</label>
+                <input type="text" id="cpInput" placeholder="Ej: ALC1, MAD2, BCN3..." maxlength="20" style="width: 100%; padding: 12px; font-size: 16px; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333;">
+            </div>
+            <div class="input-group">
+                <label for="targetKwhInput">🎯 Cantidad de energía a cargar (kWh) - Opcional:</label>
+                <input type="number" id="targetKwhInput" placeholder="Ej: 50" min="1" max="500" step="0.1" style="width: 100%; padding: 12px; font-size: 16px; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333;">
+                <small style="color: rgba(255, 255, 255, 0.7); margin-top: 5px; display: block;">Dejar vacío para carga libre. Esto solo calcula el tiempo estimado.</small>
+            </div>
+            <button id="requestBtn" class="btn btn-primary">REQUEST SERVICE</button>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="action-buttons">
+            <button id="finishBtn" class="btn btn-danger hidden">🛑 DETENER CARGA</button>
+            <button id="payBtn" class="btn btn-success hidden">💳 PAGAR Y SALIR</button>
+        </div>
+
+        <!-- Log de Mensajes -->
+        <div class="messages-panel">
+            <h2>📜 MENSAJES</h2>
+            <div class="messages-log" id="messagesLog">
+                <!-- Los mensajes se añadirán dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="driver_app.js"></script>
+</body>
+</html>

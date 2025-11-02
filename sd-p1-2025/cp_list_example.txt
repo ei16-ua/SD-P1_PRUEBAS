@@ -1,0 +1,8 @@
+# Lista de CPs para prueba automática
+# Formato: Un CP_ID por línea
+# Líneas con # son comentarios
+
+ALC1
+MAD2
+SEV3
+VAL1
